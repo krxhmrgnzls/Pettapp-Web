@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Header from 'src/components/layout/Header.jsx';
+import Header from '../../component/layout/Header';
 
 const LandingPage = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Header from '../../components/layout/Header';
+import Header from '../../component/layout/Header';
 import toast from 'react-hot-toast';
 
 const LoginPage = () => {

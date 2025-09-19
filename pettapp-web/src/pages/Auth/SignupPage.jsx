@@ -1,8 +1,7 @@
 // src/pages/Auth/SignupPage.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { authService } from '../../services/authService';
-import Header from '../../components/layout/Header';
+import Header from '../../component/layout/Header';
 import toast from 'react-hot-toast';
 
 const SignupPage = () => {
@@ -27,37 +26,50 @@ const SignupPage = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    // Validation
-    if (formData.password !== formData.confirmPassword) {
-      toast.error('Passwords do not match!');
-      return;
-    }
-    
-    if (!formData.agreeToTerms) {
-      toast.error('Please agree to the terms and policy');
-      return;
-    }
+  e.preventDefault();
+  
+  // Validation
+  if (formData.password !== formData.confirmPassword) {
+    toast.error('Passwords do not match!');
+    return;
+  }
+  
+  if (!formData.agreeToTerms) {
+    toast.error('Please agree to the terms and policy');
+    return;
+  }
 
-    setLoading(true);
-    try {
-      // TODO: Call your signup API
-      await authService.signup({
-        username: formData.username,
-        email: formData.email,
-        password: formData.password
-      });
-      
-      toast.success('Account created successfully!');
-      navigate('/login');
-    } catch (error) {
-      toast.error(error.response?.data?.message || 'Signup failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  setLoading(true);
+  try {
+    // TEMPORARY: Skip API call and just simulate success
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
+    
+    // Store dummy data in localStorage for testing
+    localStorage.setItem('tempUser', JSON.stringify({
+      username: formData.username,
+      email: formData.email
+    }));
+    
+    toast.success('Account created successfully!');
+    navigate('/account-created'); // This should go to account-created, not user-selection
+    
+    /* ORIGINAL CODE - Uncomment when backend is ready
+    await authService.signup({
+      username: formData.username,
+      email: formData.email,
+      password: formData.password
+    });
+    
+    toast.success('Account created successfully!');
+    navigate('/login');
+    */
+  // eslint-disable-next-line no-unused-vars
+  } catch (error) {
+    toast.error('Signup failed. Please try again.');
+  } finally {
+    setLoading(false);
+  }
+};
   const handleGoogleSignIn = () => {
     // TODO: Implement Google Sign In
     console.log('Google sign in clicked');
