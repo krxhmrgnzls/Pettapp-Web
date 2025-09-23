@@ -85,13 +85,12 @@ const SignupPage = () => {
           {/* Logo and Title */}
           <div className="text-center mb-8">
             {/* TODO: Replace with your actual PetTapp logo */}
-            <div className="flex justify-center mb-4">
-              <div className="bg-blue-100 p-4 rounded-full">
-                <svg className="w-12 h-12 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M4.5 10.5C4.5 12.9853 6.51472 15 9 15C11.4853 15 13.5 12.9853 13.5 10.5C13.5 8.01472 11.4853 6 9 6C6.51472 6 4.5 8.01472 4.5 10.5Z"/>
-                  <path d="M10.5 10.5C10.5 12.9853 12.5147 15 15 15C17.4853 15 19.5 12.9853 19.5 10.5C19.5 8.01472 17.4853 6 15 6C12.5147 6 10.5 8.01472 10.5 10.5Z"/>
-                </svg>
-              </div>
+            <div className="flex justify-center mb-1">
+                <img 
+                  src="/images/PetTapp Logo Inverted.png" 
+                  alt="PetTapp" 
+                  className="h-20 w-20"
+                />
             </div>
             <h2 className="text-2xl font-bold text-gray-900">Sign Up</h2>
             <p className="text-gray-600 mt-2">Create your PetTapp account</p>

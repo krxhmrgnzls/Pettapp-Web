@@ -1,4 +1,5 @@
-// tailwind.config.js
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 export default {
   content: [
     "./index.html",
@@ -7,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['SF Pro Text', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        'display': ['SF Pro Display', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        inter: ['Inter', ...defaultTheme.fontFamily.sans],
       }
     },
   },

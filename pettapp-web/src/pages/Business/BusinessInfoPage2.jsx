@@ -69,20 +69,10 @@ const BusinessInfoPage2 = () => {
             {/* Title */}
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-blue-500 mb-2">
-                Business Information
+                Business Verification
               </h1>
               <p className="text-gray-600">Please upload required documents</p>
             </div>
-
-            {/* Business Icon */}
-            <div className="flex justify-center mb-8">
-              <div className="w-24 h-24 rounded-full border-4 border-blue-500 flex items-center justify-center bg-blue-50">
-                <svg className="w-12 h-12 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                </svg>
-              </div>
-            </div>
-
             {/* Form */}
             <form onSubmit={handleConfirm} className="space-y-6">
               {/* Valid ID Upload */}

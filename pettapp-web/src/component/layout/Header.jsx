@@ -12,18 +12,18 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-1">
               {/* PetTapp Logo - Using image file */}
               <img 
-                src="/images/PetTapp LogoInverted.png" 
+                src="/images/PetTapp Logo Inverted.png" 
                 alt="PetTapp" 
-                className="h-10 w-auto"
-                onError={(e) => {
-                  // Fallback if logo doesn't exist
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
+                className="h-12 w-12"
               />
+              {
+                <span className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'var(--font-inter)' }}>
+                  PetTapp
+                </span>
+              }
               
               {/* Fallback Logo (hidden by default) */}
               <div className="hidden items-center space-x-2">

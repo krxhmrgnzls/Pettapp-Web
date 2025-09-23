@@ -10,7 +10,8 @@ const BusinessInfoPage = () => {
     address: '',
     contactInfo: '',
     openingHours: '',
-    closingHours: ''
+    closingHours: '',
+    availableDays: []
   });
 
   const handleChange = (e) => {
@@ -21,8 +22,22 @@ const BusinessInfoPage = () => {
     }));
   };
 
+  const handleDayToggle = (day) => {
+    setFormData(prev => ({
+      ...prev,
+      availableDays: prev.availableDays.includes(day)
+        ? prev.availableDays.filter(d => d !== day)
+        : [...prev.availableDays, day]
+    }));
+  };
+
   const handleNext = (e) => {
     e.preventDefault();
+    // Validate that at least one day is selected
+    if (formData.availableDays.length === 0) {
+      alert('Please select at least one business day');
+      return;
+    }
     // Store data temporarily
     localStorage.setItem('businessInfoStep1', JSON.stringify(formData));
     navigate('/business-info-2');
@@ -109,6 +124,25 @@ const BusinessInfoPage = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Business Availability
+                </label>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                  {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map(day => (
+                    <button
+                      key={day}
+                      type="button"
+                      onClick={() => handleDayToggle(day)}
+                      className={`px-4 py-2 rounded-lg border-2 transition-all ${
+                        formData.availableDays.includes(day)
+                          ? 'border-blue-500 bg-blue-500 text-white'
+                          : 'border-gray-300 hover:border-blue-300'
+                      }`}
+                    >
+                      {day.slice(0, 3)}
+                    </button>
+                  ))}
+                </div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
                   Operating Hours
                 </label>
                 <div className="flex space-x-2">
@@ -120,7 +154,7 @@ const BusinessInfoPage = () => {
                     className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
                     required
                   />
-                  <span className="flex items-center px-2 text-gray-500">-</span>
+                  <span className="flex items-center px-2 text-gray-500">to</span>
                   <input
                     type="time"
                     name="closingHours"
@@ -130,6 +164,7 @@ const BusinessInfoPage = () => {
                     required
                   />
                 </div>
+                <p className="text-xs text-gray-500 mt-2">Select the days your business is open and set operating hours</p>
               </div>
 
               <button
