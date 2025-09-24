@@ -1,14 +1,9 @@
-import { useState } from 'react';
 import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 
 const LandingPage = () => {
-  const [, setCurrentPage] = useState('/');
-
-  const navigate = (path) => {
-    setCurrentPage(path);
-    console.log(`Navigating to: ${path}`);
-  };
+  const navigate = useNavigate(); // Use React Router's navigate hook
 
   return (
     <div className={styles.pageContainer}>
@@ -25,10 +20,10 @@ const LandingPage = () => {
               <span className={styles.logoText}>PetTapp</span>
             </div>
             <nav className={styles.nav}>
-              <a href="/" className={styles.navLink}>Home</a>
-              <a href="/services" className={styles.navLink}>Services</a>
-              <a href="/about" className={styles.navLink}>About</a>
-              <a href="/contact" className={styles.navLink}>Contact</a>
+              <Link to="/" className={styles.navLink}>Home</Link>
+              <Link to="/services" className={styles.navLink}>Services</Link>
+              <Link to="/about" className={styles.navLink}>About</Link>
+              <Link to="/contact" className={styles.navLink}>Contact</Link>
             </nav>
             <div className={styles.authButtons}>
               <button onClick={() => navigate('/login')} className={styles.loginBtn}>
