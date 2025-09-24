@@ -1,0 +1,188 @@
+```css
+.dashboardContainer {
+  @apply min-h-screen bg-gray-50 p-6;
+}
+
+.dashboardTitle {
+  @apply mb-6 text-2xl font-bold text-gray-800;
+}
+
+.statsGrid {
+  @apply mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4;
+}
+
+.statCard {
+  @apply rounded-lg bg-white p-6 shadow;
+}
+
+.statLabel {
+  @apply mb-2 text-sm text-gray-500;
+}
+
+.statValue {
+  @apply text-4xl font-bold text-orange-400;
+}
+
+.mainGrid {
+  @apply grid grid-cols-1 gap-6 lg:grid-cols-2;
+}
+
+.card {
+  @apply rounded-lg bg-white shadow;
+}
+
+.cardHeader {
+  @apply border-b border-gray-200 p-4;
+}
+
+.cardHeaderContent {
+  @apply mb-4 flex items-center justify-between;
+}
+
+.cardTitle {
+  @apply text-lg font-semibold text-gray-800;
+}
+
+.tabButtons {
+  @apply flex space-x-2;
+}
+
+.tabButton {
+  @apply rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200;
+}
+
+.tabActive {
+  @apply bg-blue-500 text-white;
+}
+
+.tabUrgent {
+  @apply bg-blue-500 text-white;
+}
+
+.tabPending {
+  @apply bg-red-500 text-white;
+}
+
+.cardBody {
+  @apply space-y-4 p-4;
+}
+
+.bookingCard {
+  @apply rounded-lg border border-gray-200 p-4;
+}
+
+.bookingHeader {
+  @apply mb-3 flex items-start justify-between;
+}
+
+.bookingName {
+  @apply font-semibold text-gray-800;
+}
+
+.bookingService {
+  @apply text-sm text-gray-600;
+}
+
+.bookingType {
+  @apply text-sm text-gray-500;
+}
+
+.bookingTimeInfo {
+  @apply text-right;
+}
+
+.bookingDate {
+  @apply text-sm font-medium text-gray-800;
+}
+
+.bookingTime {
+  @apply text-sm text-gray-600;
+}
+
+.bookingActions {
+  @apply flex space-x-2;
+}
+
+.acceptBtn {
+  @apply rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-600;
+}
+
+.declineBtn {
+  @apply rounded-md border border-gray-300 px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-50;
+}
+
+.cardHeaderWithLink {
+  @apply flex items-center justify-between border-b border-gray-200 p-4;
+}
+
+.linkButton {
+  @apply text-sm text-blue-500 hover:underline;
+}
+
+.scheduleList {
+  @apply space-y-3;
+}
+
+.scheduleItem {
+  @apply flex items-center space-x-4 py-2;
+}
+
+.scheduleTime {
+  @apply w-20 text-sm font-medium text-gray-600;
+}
+
+.scheduleDetails {
+  @apply flex-1;
+}
+
+.scheduleName {
+  @apply font-medium text-gray-800;
+}
+
+.scheduleService {
+  @apply text-sm text-gray-600;
+}
+
+.statusCompleted {
+  @apply rounded-full bg-green-500 px-3 py-1 text-xs font-medium text-white;
+}
+
+.statusInProgress {
+  @apply rounded-full bg-blue-500 px-3 py-1 text-xs font-medium text-white;
+}
+
+.statusUpcoming {
+  @apply rounded-full bg-yellow-500 px-3 py-1 text-xs font-medium text-white;
+}
+
+.statusDefault {
+  @apply rounded-full bg-gray-500 px-3 py-1 text-xs font-medium text-white;
+}
+
+.activityCard {
+  @apply mt-6;
+}
+
+.activityList {
+  @apply space-y-4;
+}
+
+.activityItem {
+  @apply flex items-start space-x-3;
+}
+
+.activityAvatar {
+  @apply h-10 w-10 flex-shrink-0 rounded-full bg-gray-200;
+}
+
+.activityContent {
+  @apply flex-1;
+}
+
+.activityMessage {
+  @apply text-gray-800;
+}
+
+.activityTime {
+  @apply mt-1 text-xs text-gray-500;
+}

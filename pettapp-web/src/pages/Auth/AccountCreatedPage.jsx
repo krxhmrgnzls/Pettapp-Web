@@ -1,13 +1,12 @@
-// src/pages/Auth/AccountCreatedPage.jsx
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../component/layout/Header';
+import styles from './AccountCreatedPage.module.css';
 
 const AccountCreatedPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Auto-redirect to user selection after 3 seconds
     const timer = setTimeout(() => {
       navigate('/user-selection');
     }, 3000);
@@ -20,53 +19,42 @@ const AccountCreatedPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className={styles.pageContainer}>
       <Header />
       
-      <div className="container mx-auto px-4 py-20">
-        <div className="max-w-md mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-12 text-center">
-            {/* Success Icon */}
-            <div className="flex justify-center mb-6">
-              <div className="bg-blue-100 rounded-full p-6">
-                <svg className="w-16 h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className={styles.contentWrapper}>
+        <div className={styles.cardContainer}>
+          <div className={styles.card}>
+            <div className={styles.iconContainer}>
+              <div className={styles.iconWrapper}>
+                <svg className={styles.icon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/>
                 </svg>
               </div>
             </div>
 
-            <h1 className="text-3xl font-bold text-blue-500 mb-4">
-              Account Created!
-            </h1>
+            <h1 className={styles.title}>Account Created!</h1>
             
-            <p className="text-gray-600 mb-8">
+            <p className={styles.subtitle}>
               Verify your account through the link<br />
               sent to your email.
             </p>
 
-            {/* Changed button text and action */}
-            <button
-              onClick={handleContinue}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg font-medium text-lg transition-colors shadow-lg hover:shadow-xl"
-            >
+            <button onClick={handleContinue} className={styles.continueBtn}>
               Continue
             </button>
 
-            {/* Skip email verification option */}
-            <button
-              onClick={handleContinue}
-              className="mt-4 text-sm text-gray-500 hover:text-blue-500 underline"
-            >
+            <button onClick={handleContinue} className={styles.skipBtn}>
               Skip for now
             </button>
 
-            <div className="mt-6">
-              <p className="text-sm text-gray-500">
+            <div className={styles.resendSection}>
+              <p className={styles.resendText}>
                 Didn't receive the email?{' '}
                 <button
                   type="button"
-                  onClick={() => { /* TODO: Implement resend email logic */ }}
-                  className="text-blue-500 hover:text-blue-600 font-medium hover:underline"
+                  onClick={() => {}}
+                  className={styles.resendBtn}
                 >
                   Resend
                 </button>
@@ -74,10 +62,10 @@ const AccountCreatedPage = () => {
             </div>
           </div>
 
-          <div className="text-center mt-8">
-            <p className="text-sm text-gray-500">
+          <div className={styles.supportSection}>
+            <p className={styles.supportText}>
               Need help?{' '}
-              <a href="/contact" className="text-blue-500 hover:underline">
+              <a href="/contact" className={styles.link}>
                 Contact Support
               </a>
             </p>

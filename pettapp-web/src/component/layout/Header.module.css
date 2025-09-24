@@ -1,0 +1,84 @@
+.header {
+  @apply border-b border-gray-100 bg-white shadow-sm;
+}
+
+.headerContainer {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.headerContent {
+  @apply flex h-16 items-center justify-between;
+}
+
+.logoSection {
+  @apply flex items-center;
+}
+
+.logoLink {
+  @apply flex items-center space-x-1;
+}
+
+.logoImage {
+  @apply h-12 w-12;
+}
+
+.logoText {
+  @apply text-2xl font-bold text-gray-900;
+  font-family: var(--font-inter);
+}
+
+.desktopNav {
+  @apply hidden space-x-8 md:flex;
+}
+
+.navLink {
+  @apply px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:text-blue-500;
+}
+
+.authButtons {
+  @apply hidden items-center space-x-4 md:flex;
+}
+
+.loginBtn {
+  @apply px-4 py-2 text-sm font-medium text-blue-500 transition-colors hover:text-blue-600;
+}
+
+.signupBtn {
+  @apply rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+.mobileMenuBtn {
+  @apply md:hidden;
+}
+
+.hamburgerBtn {
+  @apply p-2 text-gray-600 hover:text-gray-900;
+}
+
+.hamburgerIcon {
+  @apply h-6 w-6;
+}
+
+.mobileMenu {
+  @apply border-t border-gray-200 py-4 md:hidden;
+}
+
+.mobileMenuContent {
+  @apply flex flex-col space-y-4;
+}
+
+.mobileNavLink {
+  @apply px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-500;
+}
+
+.mobileAuthSection {
+  @apply flex flex-col space-y-2 border-t border-gray-200 pt-4;
+}
+
+.mobileLoginBtn {
+  @apply px-3 py-2 text-left text-base font-medium text-blue-500 hover:text-blue-600;
+}
+
+.mobileSignupBtn {
+  @apply rounded-md bg-blue-500 px-3 py-2 text-base font-medium text-white hover:bg-blue-600;
+}

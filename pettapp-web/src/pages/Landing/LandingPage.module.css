@@ -1,0 +1,246 @@
+.pageContainer {
+  @apply flex min-h-screen flex-col;
+  background-image: url("/images/PetTapp pattern.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Header Styles */
+.header {
+  @apply sticky top-0 z-50 border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-sm;
+}
+
+.headerContainer {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.headerContent {
+  @apply flex h-16 items-center justify-between;
+}
+
+.logoSection {
+  @apply flex items-center space-x-2;
+}
+
+.logo {
+  @apply h-12;
+}
+
+.logoText {
+  @apply text-xl font-bold text-gray-900;
+}
+
+.nav {
+  @apply hidden space-x-8 md:flex;
+}
+
+.navLink {
+  @apply px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-500;
+}
+
+.authButtons {
+  @apply hidden items-center space-x-4 md:flex;
+}
+
+.loginBtn {
+  @apply px-4 py-2 text-sm font-medium text-blue-500 hover:text-blue-600;
+}
+
+.signupBtn {
+  @apply rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-600;
+}
+
+/* Main Content */
+.mainContent {
+  @apply flex flex-grow flex-col;
+}
+
+/* Hero Section */
+.heroSection {
+  @apply flex flex-grow items-center justify-center px-4 py-20 sm:px-6 lg:px-8;
+}
+
+.heroContent {
+  @apply mx-auto max-w-4xl text-center;
+}
+
+.heroTitle {
+  @apply mb-6 text-4xl font-bold text-gray-900 lg:text-6xl;
+}
+
+.heroSubtitle {
+  @apply mb-10 text-xl text-gray-600 lg:text-2xl;
+}
+
+.heroButtons {
+  @apply flex flex-col justify-center gap-4 sm:flex-row;
+}
+
+.primaryBtn {
+  @apply rounded-lg bg-blue-500 px-8 py-3 text-lg font-medium text-white shadow-lg transition-colors hover:bg-blue-600 hover:shadow-xl;
+}
+
+.secondaryBtn {
+  @apply rounded-lg border-2 border-blue-500 bg-white px-8 py-3 text-lg font-medium text-blue-500 transition-colors hover:bg-gray-50;
+}
+
+/* Features Section */
+.featuresSection {
+  @apply border-t border-gray-200 bg-white/95 py-20 backdrop-blur-sm;
+}
+
+.featuresContainer {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.featuresTitle {
+  @apply mb-12 text-center text-3xl font-bold text-gray-900;
+}
+
+.featuresGrid {
+  @apply grid gap-8 md:grid-cols-3;
+}
+
+.featureCard {
+  @apply text-center;
+}
+
+.featureIconBlue {
+  @apply mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-blue-100 transition-colors group-hover:bg-blue-200;
+}
+
+.featureIconGreen {
+  @apply mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 transition-colors group-hover:bg-green-200;
+}
+
+.featureIconPurple {
+  @apply mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-purple-100 transition-colors group-hover:bg-purple-200;
+}
+
+.featureIcon {
+  @apply h-10 w-10;
+}
+
+.featureIconBlue .featureIcon {
+  @apply text-blue-500;
+}
+
+.featureIconGreen .featureIcon {
+  @apply text-green-500;
+}
+
+.featureIconPurple .featureIcon {
+  @apply text-purple-500;
+}
+
+.featureTitle {
+  @apply mb-2 text-xl font-semibold;
+}
+
+.featureDescription {
+  @apply text-gray-600;
+}
+
+/* Pet Types Section */
+.petTypesSection {
+  @apply bg-gray-50/95 py-16 backdrop-blur-sm;
+}
+
+.petTypesContainer {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.petTypesCard {
+  @apply rounded-2xl bg-white p-8 shadow-lg;
+}
+
+.petTypesTitle {
+  @apply mb-8 text-center text-2xl font-bold;
+}
+
+.petTypesGrid {
+  @apply flex flex-wrap justify-center gap-8;
+}
+
+.petType {
+  @apply text-center;
+}
+
+.petEmoji {
+  @apply mb-2 text-6xl;
+}
+
+.petName {
+  @apply text-gray-700;
+}
+
+/* Footer */
+.footer {
+  @apply bg-sky-100 text-slate-800;
+}
+
+.footerContainer {
+  @apply container mx-auto px-6 py-12;
+}
+
+.footerGrid {
+  @apply grid grid-cols-1 items-center gap-8 text-center md:grid-cols-3 md:text-left;
+}
+
+.footerColumn {
+  @apply flex flex-col items-center md:items-start;
+}
+
+.footerColumnCenter {
+  @apply flex flex-col items-center;
+}
+
+.footerColumnRight {
+  @apply flex flex-col items-center md:items-end;
+}
+
+.footerTitle {
+  @apply mb-3 font-semibold;
+}
+
+.appButtons {
+  @apply flex flex-col space-y-3;
+}
+
+.appBadge {
+  @apply h-12;
+}
+
+.footerLogo {
+  @apply mb-2 h-12;
+}
+
+.footerTagline {
+  @apply text-sm text-slate-600;
+}
+
+.footerLinks {
+  @apply mt-6 flex space-x-6;
+}
+
+.footerLink {
+  @apply text-sm text-slate-600 hover:text-slate-900;
+}
+
+.socialLinks {
+  @apply flex space-x-4;
+}
+
+.socialLink {
+  @apply text-slate-700 hover:text-pink-500;
+}
+
+.socialLink:nth-child(2) {
+  @apply hover:text-blue-600;
+}
+
+.socialLink:nth-child(3) {
+  @apply hover:text-sky-500;
+}

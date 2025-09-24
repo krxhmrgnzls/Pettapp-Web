@@ -1,0 +1,43 @@
+.pageContainer {
+  @apply min-h-screen bg-gradient-to-b from-blue-50 to-white;
+}
+
+.contentWrapper {
+  @apply container mx-auto px-4 py-20;
+}
+
+.cardContainer {
+  @apply mx-auto max-w-lg;
+}
+
+.card {
+  @apply rounded-2xl bg-white p-12 shadow-xl;
+}
+
+.titleSection {
+  @apply mb-10 text-center;
+}
+
+.title {
+  @apply mb-2 text-3xl font-bold text-blue-500;
+}
+
+.subtitle {
+  @apply text-gray-600;
+}
+
+.buttonSection {
+  @apply space-y-4;
+}
+
+.userTypeBtn {
+  @apply w-full transform rounded-lg bg-blue-500 px-6 py-4 text-lg font-medium text-white shadow-lg transition-all hover:scale-105 hover:bg-blue-600;
+}
+
+.helpSection {
+  @apply mt-10 text-center;
+}
+
+.helpText {
+  @apply text-sm text-gray-500;
+}

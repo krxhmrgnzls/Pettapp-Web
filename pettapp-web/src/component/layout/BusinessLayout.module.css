@@ -1,0 +1,160 @@
+/* src/components/layout/BusinessLayout.module.css */
+
+.layoutContainer {
+  @apply flex h-screen bg-gray-50;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  @apply w-48 flex-col bg-gray-100;
+}
+
+.logoSection {
+  @apply border-b border-gray-200 bg-white p-4;
+}
+
+.logoWrapper {
+  @apply flex items-center space-x-2;
+}
+
+.logoIconContainer {
+  @apply rounded-lg bg-blue-500 p-2;
+}
+
+.logoIcon {
+  @apply h-6 w-6 text-white;
+}
+
+.logoTitle {
+  @apply text-lg font-bold text-gray-800;
+}
+
+.logoSubtitle {
+  @apply text-xs text-gray-500;
+}
+
+.mainNav {
+  @apply flex-1 py-4;
+}
+
+.bottomNav {
+  @apply border-t border-gray-200;
+}
+
+.navLink {
+  @apply flex items-center px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200;
+}
+
+.navLink svg {
+  @apply h-5 w-5;
+}
+
+.navText {
+  @apply ml-3;
+}
+
+.activeLink {
+  @apply bg-blue-500 text-white;
+}
+/* Ensure the active link doesn't change color on hover */
+.activeLink:hover {
+  @apply bg-blue-500 text-white;
+}
+
+
+/* Main Content & Header Styles */
+.mainContentArea {
+  @apply flex flex-1 flex-col overflow-hidden;
+}
+
+.header {
+  @apply border-b border-gray-200 bg-white shadow-sm;
+}
+
+.headerWrapper {
+  @apply flex items-center justify-between px-6 py-3;
+}
+
+.pageTitle {
+  @apply text-xl font-semibold text-gray-800;
+}
+
+.headerRightSection {
+  @apply flex items-center space-x-4;
+}
+
+/* Search Bar */
+.searchContainer {
+  @apply relative;
+}
+
+.searchInput {
+  @apply w-80 rounded-lg border border-gray-300 py-2 pl-10 pr-4 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500;
+}
+
+.searchIcon {
+  @apply absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400;
+}
+
+/* Header Buttons */
+.notificationButton {
+  @apply relative p-2 text-gray-600 hover:text-gray-900;
+}
+
+.notificationIcon {
+  @apply h-6 w-6;
+}
+
+.notificationDot {
+  @apply absolute right-0 top-0 h-2 w-2 rounded-full bg-red-500;
+}
+
+.addServiceButton {
+  @apply rounded-lg bg-blue-500 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+/* Profile Dropdown */
+.profileDropdownContainer {
+  @apply relative;
+}
+
+.profileButton {
+  @apply flex items-center space-x-2 rounded-lg p-2 transition-colors hover:bg-gray-50;
+}
+
+.profileAvatar {
+  @apply flex h-10 w-10 items-center justify-center rounded-full bg-gray-300;
+}
+
+.profileAvatarIcon {
+  @apply h-6 w-6 text-gray-600;
+}
+
+.profileName {
+  @apply text-sm font-medium text-gray-900;
+}
+
+.profileCaret {
+  @apply h-5 w-5 text-gray-400;
+}
+
+.dropdownMenu {
+  @apply absolute right-0 z-50 mt-2 w-48 rounded-lg border border-gray-200 bg-white shadow-lg;
+}
+
+.dropdownItem {
+  @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50;
+}
+
+.dropdownDivider {
+  @apply border-gray-200;
+}
+
+.dropdownButton {
+  @apply block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-50;
+}
+
+/* Page Content */
+.pageContent {
+  @apply flex-1 overflow-y-auto bg-gray-50;
+}

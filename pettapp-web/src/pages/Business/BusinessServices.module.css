@@ -1,0 +1,195 @@
+.schedulesContainer {
+  @apply p-8;
+}
+
+.schedulesWrapper {
+  @apply mx-auto max-w-6xl;
+}
+
+.gridContainer {
+  @apply grid grid-cols-1 gap-8 lg:grid-cols-2;
+}
+
+.schedulesCard {
+  @apply rounded-lg bg-white p-6 shadow-sm;
+}
+
+.summaryCard {
+  @apply rounded-lg bg-white p-6 shadow-sm;
+}
+
+.schedulesHeader {
+  @apply mb-6;
+}
+
+.title {
+  @apply mb-2 text-xl font-semibold text-gray-800;
+}
+
+.summaryTitle {
+  @apply mb-2 text-xl font-semibold text-gray-800;
+}
+
+.subtitle {
+  @apply mb-4 text-sm text-gray-600;
+}
+
+.summarySubtitle {
+  @apply text-sm text-gray-600;
+}
+
+.searchContainer {
+  @apply relative;
+}
+
+.searchInput {
+  @apply w-full rounded-lg border border-gray-300 py-2 pl-10 pr-4 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500;
+}
+
+.searchIcon {
+  @apply absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400;
+}
+
+.appointmentCard {
+  @apply mb-4 cursor-pointer rounded-lg border border-gray-200 p-4 transition-colors hover:bg-gray-50;
+}
+
+.appointmentHeader {
+  @apply mb-3 flex items-start justify-between;
+}
+
+.clientName {
+  @apply font-semibold text-gray-800;
+}
+
+.serviceName {
+  @apply text-sm text-gray-600;
+}
+
+.statusBadge {
+  @apply rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-700;
+}
+
+.appointmentFooter {
+  @apply flex items-center justify-between;
+}
+
+.appointmentTime {
+  @apply text-sm text-gray-500;
+}
+
+.viewDetailsBtn {
+  @apply text-sm font-medium text-blue-500 hover:text-blue-600;
+}
+
+.emptyState {
+  @apply py-8 text-center;
+}
+
+.emptyText {
+  @apply text-sm text-gray-500;
+}
+
+.summaryHeader {
+  @apply mb-6;
+}
+
+.statusSection {
+  @apply mb-6 flex justify-center;
+}
+
+.statusLabel {
+  @apply rounded-lg bg-green-500 px-6 py-2 font-medium text-white;
+}
+
+.clientSection {
+  @apply mb-6 text-center;
+}
+
+.clientTitle {
+  @apply mb-2 text-lg font-semibold text-gray-800;
+}
+
+.serviceType {
+  @apply text-gray-600;
+}
+
+.detailsList {
+  @apply mb-6 space-y-3;
+}
+
+.detailItem {
+  @apply flex justify-between border-b border-gray-200 py-2;
+}
+
+.detailLabel {
+  @apply text-sm text-gray-600;
+}
+
+.detailValue {
+  @apply text-sm font-medium text-gray-800;
+}
+
+.actionButtons {
+  @apply flex space-x-3;
+}
+
+.chatBtn {
+  @apply flex-1 rounded-lg bg-blue-500 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+.cancelBtn {
+  @apply flex-1 rounded-lg bg-gray-300 px-4 py-2 font-medium text-gray-700 transition-colors hover:bg-gray-400;
+}
+
+.petInfo {
+  @apply mt-6 rounded-lg bg-gray-50 p-4;
+}
+
+.petInfoTitle {
+  @apply mb-2 text-sm font-medium text-gray-700;
+}
+
+.petInfoText {
+  @apply text-sm text-gray-600;
+}
+
+.noSelection {
+  @apply py-12 text-center;
+}
+
+.calendarIcon {
+  @apply mx-auto mb-4 h-16 w-16 text-gray-300;
+}
+
+.noSelectionText {
+  @apply text-gray-500;
+}
+
+.statsGrid {
+  @apply mt-8 grid grid-cols-1 gap-4 md:grid-cols-4;
+}
+
+.statCard {
+  @apply rounded-lg bg-white p-4 text-center shadow-sm;
+}
+
+.statValue {
+  @apply text-2xl font-bold text-blue-500;
+}
+
+.statGreen {
+  @apply text-green-500;
+}
+
+.statOrange {
+  @apply text-orange-500;
+}
+
+.statPurple {
+  @apply text-purple-500;
+}
+
+.statLabel {
+  @apply mt-1 text-sm text-gray-600;
+}

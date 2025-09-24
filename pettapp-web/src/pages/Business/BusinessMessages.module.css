@@ -1,0 +1,163 @@
+.messagesContainer {
+  @apply flex h-full;
+}
+
+.conversationsList {
+  @apply w-96 border-r border-gray-200 bg-white;
+}
+
+.conversationsHeader {
+  @apply border-b border-gray-200 p-4;
+}
+
+.conversationsTitle {
+  @apply mb-4 text-xl font-semibold text-gray-800;
+}
+
+.searchContainer {
+  @apply relative;
+}
+
+.searchInput {
+  @apply w-full rounded-lg border border-gray-300 py-2 pl-10 pr-4 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500;
+}
+
+.searchIcon {
+  @apply absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-gray-400;
+}
+
+.conversationsBody {
+  @apply h-full overflow-y-auto;
+}
+
+.conversationItem {
+  @apply flex cursor-pointer items-start border-b border-gray-100 p-4 transition-colors hover:bg-gray-50;
+}
+
+.conversationActive {
+  @apply bg-blue-50;
+}
+
+.conversationAvatar {
+  @apply flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gray-300;
+}
+
+.avatarIcon {
+  @apply h-6 w-6 text-gray-600;
+}
+
+.conversationDetails {
+  @apply ml-3 flex-1;
+}
+
+.conversationHeader {
+  @apply flex items-start justify-between;
+}
+
+.conversationName {
+  @apply font-medium text-gray-900;
+}
+
+.conversationTime {
+  @apply text-xs text-gray-500;
+}
+
+.conversationMessage {
+  @apply mt-1 truncate text-sm text-gray-600;
+}
+
+.chatArea {
+  @apply flex flex-1 flex-col bg-gray-50;
+}
+
+.chatHeader {
+  @apply flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4;
+}
+
+.chatUserInfo {
+  @apply flex items-center;
+}
+
+.chatAvatar {
+  @apply flex h-10 w-10 items-center justify-center rounded-full bg-gray-300;
+}
+
+.chatUserDetails {
+  @apply ml-3;
+}
+
+.chatUserName {
+  @apply font-medium text-gray-900;
+}
+
+.chatUserStatus {
+  @apply text-sm text-gray-500;
+}
+
+.chatActions {
+  @apply flex space-x-2;
+}
+
+.chatActionBtn {
+  @apply rounded-lg p-2 transition-colors hover:bg-gray-100;
+}
+
+.actionIcon {
+  @apply h-5 w-5 text-gray-600;
+}
+
+.messagesArea {
+  @apply flex-1 overflow-y-auto p-6;
+}
+
+.messagesList {
+  @apply space-y-4;
+}
+
+.messageWrapper {
+  @apply flex justify-start;
+}
+
+.messageWrapperOwn {
+  @apply justify-end;
+}
+
+.messageBubble {
+  @apply max-w-xs rounded-lg px-4 py-2 lg:max-w-md;
+}
+
+.messageBubbleOther {
+  @apply bg-white text-gray-800;
+}
+
+.messageBubbleOwn {
+  @apply bg-blue-500 text-white;
+}
+
+.messageText {
+  @apply text-sm;
+}
+
+.messageTime {
+  @apply mt-1 text-xs text-gray-500;
+}
+
+.messageTimeOwn {
+  @apply text-blue-100;
+}
+
+.messageForm {
+  @apply border-t border-gray-200 bg-white p-4;
+}
+
+.messageInputContainer {
+  @apply flex space-x-2;
+}
+
+.messageInput {
+  @apply flex-1 rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500;
+}
+
+.sendBtn {
+  @apply rounded-lg bg-blue-500 px-6 py-2 font-medium text-white transition-colors hover:bg-blue-600;
+}

@@ -1,0 +1,83 @@
+.pageContainer {
+  @apply min-h-screen bg-gradient-to-b from-blue-50 to-white;
+}
+
+.contentWrapper {
+  @apply container mx-auto px-4 py-12;
+}
+
+.formContainer {
+  @apply mx-auto max-w-2xl;
+}
+
+.formCard {
+  @apply rounded-2xl bg-white p-8 shadow-xl;
+}
+
+.titleSection {
+  @apply mb-8 text-center;
+}
+
+.title {
+  @apply mb-2 text-3xl font-bold text-blue-500;
+}
+
+.subtitle {
+  @apply text-gray-600;
+}
+
+.imageUploadSection {
+  @apply mb-8 flex justify-center;
+}
+
+.imageUploadBtn {
+  @apply flex h-24 w-24 items-center justify-center rounded-full border-4 border-dashed border-blue-500 transition-colors hover:bg-blue-50;
+}
+
+.uploadIcon {
+  @apply h-10 w-10 text-blue-500;
+}
+
+.form {
+  @apply space-y-6;
+}
+
+.label {
+  @apply mb-2 block text-sm font-medium text-gray-700;
+}
+
+.input {
+  @apply w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-transparent focus:ring-2 focus:ring-blue-500;
+}
+
+.daysGrid {
+  @apply mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4;
+}
+
+.dayBtn {
+  @apply rounded-lg border-2 border-gray-300 px-4 py-2 transition-all hover:border-blue-300;
+}
+
+.dayBtnActive {
+  @apply border-blue-500 bg-blue-500 text-white;
+}
+
+.timeInputs {
+  @apply flex space-x-2;
+}
+
+.timeInput {
+  @apply flex-1 rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-transparent focus:ring-2 focus:ring-blue-500;
+}
+
+.timeSeparator {
+  @apply flex items-center px-2 text-gray-500;
+}
+
+.helpText {
+  @apply mt-2 text-xs text-gray-500;
+}
+
+.submitBtn {
+  @apply w-full rounded-lg bg-blue-500 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-600;
+}

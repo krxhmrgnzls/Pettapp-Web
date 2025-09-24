@@ -1,0 +1,183 @@
+.profileContainer {
+  @apply p-8;
+}
+
+.profileWrapper {
+  @apply mx-auto max-w-5xl;
+}
+
+.profileCard {
+  @apply rounded-lg bg-white p-8 shadow-sm;
+}
+
+.profileHeader {
+  @apply mb-8 flex items-start space-x-6;
+}
+
+.profileImageContainer {
+  @apply relative;
+}
+
+.profileImage {
+  @apply flex h-24 w-24 items-center justify-center rounded-full bg-blue-500;
+}
+
+.profileIcon {
+  @apply h-12 w-12 text-white;
+}
+
+.editImageBtn {
+  @apply absolute bottom-0 right-0 rounded-full border border-gray-300 bg-white p-1;
+}
+
+.editIcon {
+  @apply h-4 w-4 text-gray-600;
+}
+
+.profileInfo {
+  @apply flex-1;
+}
+
+.profileName {
+  @apply text-2xl font-bold text-gray-800;
+}
+
+.profileUsername {
+  @apply text-blue-500;
+}
+
+.profileEmail {
+  @apply text-gray-500;
+}
+
+.profileContent {
+  @apply grid grid-cols-1 gap-8 md:grid-cols-2;
+}
+
+.businessInfoSection {
+  @apply space-y-4;
+}
+
+.incomeSection {
+  @apply space-y-4;
+}
+
+.sectionTitle {
+  @apply mb-4 text-lg font-semibold text-gray-800;
+}
+
+.formFields {
+  @apply space-y-4;
+}
+
+.formGroup {
+  @apply space-y-1;
+}
+
+.label {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.input {
+  @apply w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500 disabled:bg-gray-50;
+}
+
+.daysGrid {
+  @apply flex flex-wrap gap-2;
+}
+
+.dayBtn {
+  @apply rounded-lg bg-gray-100 px-3 py-1 text-sm font-medium text-gray-600 transition-colors hover:bg-blue-600 hover:text-white;
+}
+
+.dayBtnActive {
+  @apply bg-blue-500 text-white;
+}
+
+.dayBtnDisabled {
+  @apply cursor-not-allowed;
+}
+
+.timeInputs {
+  @apply flex items-center space-x-2;
+}
+
+.timeInput {
+  @apply flex-1 rounded-lg border border-gray-300 px-3 py-2 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500 disabled:bg-gray-50;
+}
+
+.timeSeparator {
+  @apply text-gray-500;
+}
+
+.incomeCard {
+  @apply rounded-lg bg-gray-50 p-6;
+}
+
+.balanceSection {
+  @apply mb-6 text-center;
+}
+
+.balanceLabel {
+  @apply mb-2 text-sm text-gray-600;
+}
+
+.balanceAmount {
+  @apply text-3xl font-bold text-gray-800;
+}
+
+.statsGrid {
+  @apply mb-6 grid grid-cols-2 gap-4;
+}
+
+.statCard {
+  @apply rounded-lg bg-white p-4 text-center;
+}
+
+.statLabel {
+  @apply mb-1 text-xs text-gray-600;
+}
+
+.statValue {
+  @apply text-2xl font-bold;
+}
+
+.statValueRed {
+  @apply text-red-500;
+}
+
+.statValueGreen {
+  @apply text-green-500;
+}
+
+.statDescription {
+  @apply mt-1 text-xs text-gray-500;
+}
+
+.incomeDetails {
+  @apply space-y-3;
+}
+
+.incomeItem {
+  @apply flex items-center justify-between border-b border-gray-200 py-2;
+}
+
+.incomeItemLast {
+  @apply border-b-0;
+}
+
+.incomeLabel {
+  @apply text-sm text-gray-600;
+}
+
+.incomeValue {
+  @apply text-sm font-semibold text-gray-800;
+}
+
+.actionSection {
+  @apply mt-8 flex justify-center;
+}
+
+.editBtn {
+  @apply rounded-lg bg-blue-500 px-8 py-3 font-medium text-white transition-colors hover:bg-blue-600;
+}

@@ -1,7 +1,7 @@
-// src/pages/Business/BusinessInfoPage.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../component/layout/Header';
+import styles from './BusinessInfoPage.module.css';
 
 const BusinessInfoPage = () => {
   const navigate = useNavigate();
@@ -33,144 +33,116 @@ const BusinessInfoPage = () => {
 
   const handleNext = (e) => {
     e.preventDefault();
-    // Validate that at least one day is selected
     if (formData.availableDays.length === 0) {
       alert('Please select at least one business day');
       return;
     }
-    // Store data temporarily
     localStorage.setItem('businessInfoStep1', JSON.stringify(formData));
     navigate('/business-info-2');
   };
 
   const handleImageUpload = () => {
-    // Placeholder for image upload functionality
     console.log('Image upload clicked');
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className={styles.pageContainer}>
       <Header />
       
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            {/* Title */}
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-blue-500 mb-2">
-                Business Information
-              </h1>
-              <p className="text-gray-600">Please provide your business details</p>
+      <div className={styles.contentWrapper}>
+        <div className={styles.formContainer}>
+          <div className={styles.formCard}>
+            <div className={styles.titleSection}>
+              <h1 className={styles.title}>Business Information</h1>
+              <p className={styles.subtitle}>Please provide your business details</p>
             </div>
 
-            {/* Image Upload Section */}
-            <div className="flex justify-center mb-8">
-              <button
-                onClick={handleImageUpload}
-                className="w-24 h-24 rounded-full border-4 border-blue-500 border-dashed flex items-center justify-center hover:bg-blue-50 transition-colors"
-              >
-                <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className={styles.imageUploadSection}>
+              <button onClick={handleImageUpload} className={styles.imageUploadBtn}>
+                <svg className={styles.uploadIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </button>
             </div>
 
-            {/* Form */}
-            <form onSubmit={handleNext} className="space-y-6">
+            <form onSubmit={handleNext} className={styles.form}>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Business Name
-                </label>
+                <label className={styles.label}>Business Name</label>
                 <input
                   type="text"
                   name="businessName"
                   value={formData.businessName}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className={styles.input}
                   placeholder="Enter your business name"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Address
-                </label>
+                <label className={styles.label}>Address</label>
                 <input
                   type="text"
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className={styles.input}
                   placeholder="Enter your business address"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Contact Information
-                </label>
+                <label className={styles.label}>Contact Information</label>
                 <input
                   type="text"
                   name="contactInfo"
                   value={formData.contactInfo}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className={styles.input}
                   placeholder="Phone number or email"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Business Availability
-                </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                <label className={styles.label}>Business Availability</label>
+                <div className={styles.daysGrid}>
                   {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map(day => (
                     <button
                       key={day}
                       type="button"
                       onClick={() => handleDayToggle(day)}
-                      className={`px-4 py-2 rounded-lg border-2 transition-all ${
-                        formData.availableDays.includes(day)
-                          ? 'border-blue-500 bg-blue-500 text-white'
-                          : 'border-gray-300 hover:border-blue-300'
-                      }`}
+                      className={`${styles.dayBtn} ${formData.availableDays.includes(day) ? styles.dayBtnActive : ''}`}
                     >
                       {day.slice(0, 3)}
                     </button>
                   ))}
                 </div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Operating Hours
-                </label>
-                <div className="flex space-x-2">
+                <label className={styles.label}>Operating Hours</label>
+                <div className={styles.timeInputs}>
                   <input
                     type="time"
                     name="openingHours"
                     value={formData.openingHours}
                     onChange={handleChange}
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                    className={styles.timeInput}
                     required
                   />
-                  <span className="flex items-center px-2 text-gray-500">to</span>
+                  <span className={styles.timeSeparator}>to</span>
                   <input
                     type="time"
                     name="closingHours"
                     value={formData.closingHours}
                     onChange={handleChange}
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                    className={styles.timeInput}
                     required
                   />
                 </div>
-                <p className="text-xs text-gray-500 mt-2">Select the days your business is open and set operating hours</p>
+                <p className={styles.helpText}>Select the days your business is open and set operating hours</p>
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg font-medium text-lg transition-colors"
-              >
+              <button type="submit" className={styles.submitBtn}>
                 Next
               </button>
             </form>
