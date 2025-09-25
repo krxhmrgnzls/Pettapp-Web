@@ -1,4 +1,3 @@
-// src/pages/Business/BusinessServices.jsx
 import React, { useState } from 'react';
 import BusinessLayout from '../../component/layout/BusinessLayout';
 import { useNavigate } from 'react-router-dom';
@@ -148,7 +147,7 @@ const BusinessServices = () => {
             {/* Empty state placeholder cards - for demonstration */}
             {services.length < 2 && (
               <>
-                {/* You can add more placeholder cards here if needed */}
+                {}
               </>
             )}
           </div>

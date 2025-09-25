@@ -1,0 +1,129 @@
+.modalOverlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  @apply relative w-full max-w-lg rounded-2xl bg-white shadow-2xl;
+  animation: slideUp 0.3s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  @apply flex items-start justify-between border-b border-gray-200 p-6;
+}
+
+.modalTitle {
+  @apply text-xl font-semibold text-gray-900;
+}
+
+.modalSubtitle {
+  @apply mt-1 text-sm text-gray-500;
+}
+
+.closeButton {
+  @apply text-3xl text-gray-400 transition-colors hover:text-gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 0.7;
+  padding: 0;
+}
+
+.modalBody {
+  @apply p-6;
+}
+
+.formGroup {
+  @apply mb-5;
+}
+
+.label {
+  @apply mb-2 block text-sm font-medium text-gray-700;
+}
+
+.input {
+  @apply w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20;
+}
+
+.select {
+  @apply w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.priceInputs {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.priceInputWrapper {
+  @apply relative;
+}
+
+.priceLabel {
+  @apply mt-1 block text-xs text-gray-500;
+}
+
+.priceNote {
+  @apply mt-3 text-xs text-gray-600;
+}
+
+.quickSetupBox {
+  @apply mt-5 rounded-lg border border-blue-200 bg-blue-50 p-4;
+}
+
+.quickSetupTitle {
+  @apply mb-2 font-semibold text-blue-700;
+}
+
+.quickSetupText {
+  @apply text-sm text-gray-700;
+}
+
+.modalFooter {
+  @apply mt-6 flex justify-end gap-3;
+}
+
+.cancelButton {
+  @apply rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-50;
+}
+
+.submitButton {
+  @apply rounded-lg bg-blue-500 px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .modalContent {
+    @apply m-4 max-w-full;
+  }
+  
+  .priceInputs {
+    @apply grid-cols-1;
+  }
+}

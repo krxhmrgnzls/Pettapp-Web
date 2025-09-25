@@ -1,4 +1,3 @@
-// src/pages/Business/BusinessSchedules.jsx
 import React, { useState } from 'react';
 import BusinessLayout from '../../component/layout/BusinessLayout';
 
@@ -174,7 +173,7 @@ const BusinessSchedules = () => {
             </div>
           </div>
 
-          {/* Additional Statistics Section - Optional */}
+          {/* Additional Statistics Section */}
           <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="bg-white rounded-lg shadow-sm p-4 text-center">
               <p className="text-2xl font-bold text-blue-500">5</p>

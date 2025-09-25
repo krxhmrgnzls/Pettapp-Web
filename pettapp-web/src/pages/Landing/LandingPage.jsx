@@ -1,9 +1,10 @@
 import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { useNavigate, Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
+import logoImage from '../../assets/pettapp-logo-inverted.png';
 
 const LandingPage = () => {
-  const navigate = useNavigate(); // Use React Router's navigate hook
+  const navigate = useNavigate(); 
 
   return (
     <div className={styles.pageContainer}>
@@ -13,9 +14,9 @@ const LandingPage = () => {
           <div className={styles.headerContent}>
             <div className={styles.logoSection}>
               <img 
-                src="/images/PetTapp-Logo.png" 
-                alt="PetTapp" 
-                className={styles.logo}
+              src={logoImage} 
+              alt="PetTapp Logo" 
+              className={styles.logo}
               />
               <span className={styles.logoText}>PetTapp</span>
             </div>

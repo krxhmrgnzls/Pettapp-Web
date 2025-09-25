@@ -124,7 +124,7 @@ const SignupPage = () => {
                   onClick={() => setShowPassword(!showPassword)}
                   className={styles.toggleBtn}
                 >
-                  {/* Eye icons here */}
+                  {}
                 </button>
               </div>
             </div>
@@ -146,7 +146,7 @@ const SignupPage = () => {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className={styles.toggleBtn}
                 >
-                  {/* Eye icons here */}
+                  {}
                 </button>
               </div>
             </div>
@@ -184,7 +184,7 @@ const SignupPage = () => {
 
           <div className={styles.socialSection}>
             <button onClick={handleGoogleSignIn} className={styles.googleBtn}>
-              {/* Google icon SVG here */}
+              {}
               <span>Sign up with Google</span>
             </button>
           </div>

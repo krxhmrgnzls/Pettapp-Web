@@ -1,8 +1,9 @@
-// src/pages/Business/BusinessProfile.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BusinessLayout from '../../component/layout/BusinessLayout';
 
 const BusinessProfile = () => {
+  const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
     username: 'Pet Care Professional',
@@ -39,7 +40,7 @@ const BusinessProfile = () => {
 
   const handleEdit = () => {
     if (isEditing) {
-      // Save logic here
+      // logic here
       // TODO: Add API call to save profile data
       console.log('Saving profile data:', profileData);
     }
@@ -209,7 +210,7 @@ const BusinessProfile = () => {
                     </div>
                   </div>
 
-                  {/* Additional income details can be added here */}
+                  {/* Additional income details */}
                   <div className="mt-6 space-y-3">
                     <div className="flex justify-between items-center py-2 border-b border-gray-200">
                       <span className="text-sm text-gray-600">Today's Earnings</span>
@@ -228,6 +229,17 @@ const BusinessProfile = () => {
                       <span className="text-sm font-semibold text-gray-800">PHP 0.00</span>
                     </div>
                   </div>
+
+                  {/* Add View Details Button HERE */}
+                  <button 
+                    onClick={() => navigate('/business/income-management')}
+                    className="w-full mt-6 px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
+                    View Income Details
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>

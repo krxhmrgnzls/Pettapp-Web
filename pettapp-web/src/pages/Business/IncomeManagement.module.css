@@ -1,0 +1,132 @@
+.container {
+  @apply mx-auto max-w-7xl p-8;
+}
+
+.pageHeader {
+  @apply mb-6;
+}
+
+.backButton {
+  @apply flex items-center text-lg font-medium text-gray-700 transition-colors hover:text-gray-900;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Balance Card */
+.balanceCard {
+  @apply mb-6 rounded-2xl bg-white p-8 shadow-sm;
+}
+
+.balanceContent {
+  @apply space-y-6;
+}
+
+.balanceInfo {
+  @apply text-center;
+}
+
+.balanceLabel {
+  @apply mb-2 text-sm text-gray-600;
+}
+
+.balanceAmount {
+  @apply text-4xl font-bold text-gray-900;
+}
+
+/* Stats Container */
+.statsContainer {
+  @apply flex items-center justify-center gap-8;
+}
+
+.statItem {
+  @apply text-center;
+}
+
+.statLabel {
+  @apply mb-1 block text-sm text-gray-600;
+}
+
+.statValue {
+  @apply block text-2xl font-bold;
+}
+
+.statValue.negative {
+  @apply text-red-500;
+}
+
+.statValue.positive {
+  @apply text-green-500;
+}
+
+.statDescription {
+  @apply mt-2 block text-xs text-gray-500;
+}
+
+.statDivider {
+  @apply h-16 w-px bg-gray-200;
+}
+
+/* View Summary Button */
+.viewSummaryButton {
+  @apply mb-8 w-full rounded-lg bg-blue-500 py-3 font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+/* Two Column Layout */
+.columnsContainer {
+  @apply grid grid-cols-1 gap-6 lg:grid-cols-2;
+}
+
+.section {
+  @apply space-y-4;
+}
+
+.sectionTitle {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.emptyCard {
+  @apply min-h-[300px] rounded-xl bg-white p-6 shadow-sm;
+}
+
+.emptyState {
+  @apply flex h-full min-h-[250px] items-center justify-center;
+}
+
+.emptyText {
+  @apply text-gray-400;
+}
+
+/* Payment and Transaction Lists */
+.paymentsList,
+.transactionsList {
+  @apply space-y-3;
+}
+
+.paymentItem,
+.transactionItem {
+  @apply rounded-lg border border-gray-100 p-4 transition-colors hover:bg-gray-50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    @apply p-4;
+  }
+  
+  .balanceCard {
+    @apply p-6;
+  }
+  
+  .statsContainer {
+    @apply flex-col gap-4;
+  }
+  
+  .statDivider {
+    @apply h-px w-16;
+  }
+  
+  .columnsContainer {
+    @apply grid-cols-1;
+  }
+}

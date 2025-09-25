@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../component/layout/Header';
 import toast from 'react-hot-toast';
 import styles from './LoginPage.module.css';
+import logoImage from '../../assets/pettapp-logo-inverted.png';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -49,8 +50,8 @@ const LoginPage = () => {
           <div className={styles.logoSection}>
             <div className={styles.logoContainer}>
               <img 
-                src="/images/PetTapp Logo Inverted.png" 
-                alt="PetTapp" 
+                src={logoImage} 
+                alt="PetTapp Logo"
                 className={styles.logo}
               />
             </div>

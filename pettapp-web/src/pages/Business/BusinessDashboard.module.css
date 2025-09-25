@@ -1,6 +1,5 @@
-```css
 .dashboardContainer {
-  @apply min-h-screen bg-gray-50 p-6;
+  @apply min-h-screen bg-gray-50;
 }
 
 .dashboardTitle {
@@ -8,7 +7,7 @@
 }
 
 .statsGrid {
-  @apply mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4;
+  @apply grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4;
 }
 
 .statCard {
@@ -24,7 +23,7 @@
 }
 
 .mainGrid {
-  @apply grid grid-cols-1 gap-6 lg:grid-cols-2;
+  @apply grid grid-cols-1 gap-6 lg:grid-cols-2 mt-6;
 }
 
 .card {
@@ -52,15 +51,15 @@
 }
 
 .tabActive {
-  @apply bg-blue-500 text-white;
+  @apply bg-blue-500 text-white hover:bg-blue-600;
 }
 
 .tabUrgent {
-  @apply bg-blue-500 text-white;
+  @apply bg-orange-500 text-white hover:bg-orange-600;
 }
 
 .tabPending {
-  @apply bg-red-500 text-white;
+  @apply bg-red-500 text-white hover:bg-red-600;
 }
 
 .cardBody {
@@ -68,7 +67,7 @@
 }
 
 .bookingCard {
-  @apply rounded-lg border border-gray-200 p-4;
+  @apply rounded-lg border border-gray-200 p-4 hover:shadow-sm transition-shadow;
 }
 
 .bookingHeader {
@@ -100,7 +99,7 @@
 }
 
 .bookingActions {
-  @apply flex space-x-2;
+  @apply flex space-x-2 mt-3;
 }
 
 .acceptBtn {
@@ -116,7 +115,7 @@
 }
 
 .linkButton {
-  @apply text-sm text-blue-500 hover:underline;
+  @apply text-sm text-blue-500 hover:text-blue-600 hover:underline cursor-pointer;
 }
 
 .scheduleList {
@@ -124,15 +123,15 @@
 }
 
 .scheduleItem {
-  @apply flex items-center space-x-4 py-2;
+  @apply flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition-colors;
 }
 
 .scheduleTime {
-  @apply w-20 text-sm font-medium text-gray-600;
+  @apply text-sm font-medium text-gray-600 w-20;
 }
 
-.scheduleDetails {
-  @apply flex-1;
+.scheduleInfo {
+  @apply flex-1 ml-4;
 }
 
 .scheduleName {
@@ -143,22 +142,27 @@
   @apply text-sm text-gray-600;
 }
 
+.statusBadge {
+  @apply px-3 py-1 rounded-full text-xs font-medium;
+}
+
 .statusCompleted {
-  @apply rounded-full bg-green-500 px-3 py-1 text-xs font-medium text-white;
+  @apply bg-green-100 text-green-800;
 }
 
 .statusInProgress {
-  @apply rounded-full bg-blue-500 px-3 py-1 text-xs font-medium text-white;
+  @apply bg-blue-100 text-blue-800;
 }
 
 .statusUpcoming {
-  @apply rounded-full bg-yellow-500 px-3 py-1 text-xs font-medium text-white;
+  @apply bg-yellow-100 text-yellow-800;
 }
 
 .statusDefault {
-  @apply rounded-full bg-gray-500 px-3 py-1 text-xs font-medium text-white;
+  @apply bg-gray-100 text-gray-800;
 }
 
+/* Activity Card */
 .activityCard {
   @apply mt-6;
 }
@@ -172,7 +176,7 @@
 }
 
 .activityAvatar {
-  @apply h-10 w-10 flex-shrink-0 rounded-full bg-gray-200;
+  @apply w-8 h-8 rounded-full bg-gray-200 flex-shrink-0;
 }
 
 .activityContent {
@@ -180,9 +184,9 @@
 }
 
 .activityMessage {
-  @apply text-gray-800;
+  @apply text-sm text-gray-800;
 }
 
 .activityTime {
-  @apply mt-1 text-xs text-gray-500;
+  @apply text-xs text-gray-500 mt-1;
 }

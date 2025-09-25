@@ -1,16 +1,22 @@
-// src/components/layout/BusinessLayout.jsx
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import styles from './BusinessLayout.module.css'; 
+import styles from './BusinessLayout.module.css';
+import logoImage from '../../assets/pettapp-logo-inverted.png';
+import ServiceModal from '../modals/ServiceModal';
+import NotificationModal from '../modals/NotificationModal';
 
 const BusinessLayout = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
-
+  
+  const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
+  const [isNotificationModalOpen, setIsNotificationModalOpen] = useState(false);
+  
   const businessData = JSON.parse(localStorage.getItem('businessData') || '{}');
   const businessName = businessData.businessName || 'Pet Hotel';
 
+  
   const handleLogout = () => {
     localStorage.clear();
     navigate('/');
@@ -29,22 +35,36 @@ const BusinessLayout = ({ children }) => {
   ];
 
   const bottomItems = [
-    { name: 'Settings', path: '/business/settings', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
-    { name: 'Help & Support', path: '/business/support', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
+    { name: 'Settings', path: '/business/settings', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg> },
+    { name: 'Help & Support', path: '/business/help', icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
   ];
+
+  const handleServiceSubmit = (serviceData) => {
+    console.log('New service data:', serviceData);
+    // TODO: Make an API call to save the service
+    // For now, save to localStorage or state
+    
+    // const services = JSON.parse(localStorage.getItem('services') || '[]');
+    // services.push({ ...serviceData, id: Date.now() });
+    // localStorage.setItem('services', JSON.stringify(services));
+  };
 
   return (
     <div className={styles.layoutContainer}>
+      {/* Sidebar */}
       <div className={styles.sidebar}>
         {/* Logo Section */}
         <div className={styles.logoSection}>
           <div className={styles.logoWrapper}>
-            <div className={styles.logoIconContainer}>
-              <svg className={styles.logoIcon} fill="currentColor" viewBox="0 0 24 24"><path d="M4.5 10.5C4.5 12.9853 6.51472 15 9 15C11.4853 15 13.5 12.9853 13.5 10.5C13.5 8.01472 11.4853 6 9 6C6.51472 6 4.5 8.01472 4.5 10.5Z"/><path d="M10.5 10.5C10.5 12.9853 12.5147 15 15 15C17.4853 15 19.5 12.9853 19.5 10.5C19.5 8.01472 17.4853 6 15 6C12.5147 6 10.5 8.01472 10.5 10.5Z"/></svg>
-            </div>
+            {}
+           <img 
+            src={logoImage} 
+            alt="PetTapp Logo" 
+            className={styles.logoImage}
+                         />
             <div>
-              <h1 className={styles.logoTitle}>PetTapp</h1>
-              <p className={styles.logoSubtitle}>Business Owner Centre</p>
+              <div className={styles.logoTitle}>PetTapp</div>
+              <div className={styles.logoSubtitle}>Business Owner Centre</div>
             </div>
           </div>
         </div>
@@ -75,14 +95,9 @@ const BusinessLayout = ({ children }) => {
         {/* Top Header */}
         <header className={styles.header}>
           <div className={styles.headerWrapper}>
-            <div>
-              <h2 className={styles.pageTitle}>
-                {location.pathname.includes('dashboard') && 'Dashboard'}
-                {location.pathname.includes('profile') && 'Profile'}
-                {location.pathname.includes('messages') && 'Messages'}
-                {location.pathname.includes('services') && 'Services'}
-                {location.pathname.includes('schedules') && 'Schedules'}
-              </h2>
+            {/* Left side - empty or can add breadcrumbs later */}
+            <div className={styles.headerLeft}>
+              {}
             </div>
 
             <div className={styles.headerRightSection}>
@@ -92,14 +107,20 @@ const BusinessLayout = ({ children }) => {
                 <svg className={styles.searchIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </div>
 
-              {/* Notifications */}
-              <button className={styles.notificationButton}>
+              {}
+              <button 
+                className={styles.notificationButton}
+                onClick={() => setIsNotificationModalOpen(true)}
+              >
                 <svg className={styles.notificationIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
                 <span className={styles.notificationDot}></span>
               </button>
 
-              {/* Add Services Button */}
-              <button onClick={() => navigate('/business/services/new')} className={styles.addServiceButton}>
+              {/* Add Services Button - Updated with onClick handler */}
+              <button 
+                onClick={() => setIsServiceModalOpen(true)} 
+                className={styles.addServiceButton}
+              >
                 + Add Services
               </button>
 
@@ -130,6 +151,18 @@ const BusinessLayout = ({ children }) => {
           {children}
         </main>
       </div>
+
+      {}
+      <ServiceModal
+        isOpen={isServiceModalOpen}
+        onClose={() => setIsServiceModalOpen(false)}
+        onSubmit={handleServiceSubmit}
+      />
+
+      <NotificationModal
+        isOpen={isNotificationModalOpen}
+        onClose={() => setIsNotificationModalOpen(false)}
+      />
     </div>
   );
 };

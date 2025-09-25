@@ -1,0 +1,123 @@
+.container {
+  @apply mx-auto max-w-7xl p-8;
+}
+
+.pageHeader {
+  @apply mb-6;
+}
+
+.backButton {
+  @apply flex items-center text-lg font-medium text-gray-700 transition-colors hover:text-gray-900;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Chart Card */
+.chartCard {
+  @apply mb-8 rounded-2xl bg-white p-8 shadow-sm;
+}
+
+.chartContainer {
+  @apply space-y-6;
+}
+
+.monthRow {
+  @apply flex items-center gap-4;
+}
+
+.monthLabel {
+  @apply w-16 text-right text-sm font-medium text-gray-700;
+}
+
+.barContainer {
+  @apply relative flex-1;
+}
+
+.bar {
+  @apply relative rounded-full bg-gradient-to-r from-pink-400 to-pink-500 py-3 transition-all duration-500 ease-out;
+  animation: growWidth 1s ease-out;
+}
+
+.barAmount {
+  @apply absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium text-white;
+}
+
+/* Recent Transactions Section */
+.transactionsSection {
+  @apply space-y-4;
+}
+
+.sectionTitle {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.transactionsCard {
+  @apply rounded-xl bg-white p-6 shadow-sm;
+}
+
+.transactionsList {
+  @apply space-y-3;
+}
+
+.transactionItem {
+  @apply flex items-center justify-between rounded-lg border border-gray-100 p-4 transition-colors hover:bg-gray-50;
+}
+
+.transactionInfo {
+  @apply flex-1;
+}
+
+.clientName {
+  @apply font-medium text-gray-900;
+}
+
+.serviceName {
+  @apply mt-1 text-sm text-gray-600;
+}
+
+.transactionDetails {
+  @apply text-right;
+}
+
+.transactionAmount {
+  @apply font-semibold text-green-600;
+}
+
+.transactionDate {
+  @apply mt-1 text-xs text-gray-500;
+}
+
+.emptyState {
+  @apply flex min-h-[200px] items-center justify-center text-gray-400;
+}
+
+/* Animations */
+@keyframes growWidth {
+  from {
+    width: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    @apply p-4;
+  }
+  
+  .chartCard {
+    @apply p-6;
+  }
+  
+  .monthLabel {
+    @apply w-12 text-xs;
+  }
+  
+  .barAmount {
+    @apply right-2 text-xs;
+  }
+  
+  .bar {
+    @apply py-2;
+  }
+}

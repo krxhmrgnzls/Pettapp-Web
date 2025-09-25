@@ -15,7 +15,7 @@
 }
 
 .logo {
-  @apply h-12;
+  @apply w-20 h-auto; 
 }
 
 .logoText {

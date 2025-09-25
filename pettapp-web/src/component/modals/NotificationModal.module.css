@@ -1,0 +1,125 @@
+.modalOverlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  @apply relative w-full max-w-md rounded-2xl bg-white shadow-2xl;
+  animation: slideUp 0.3s ease-out;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  @apply flex items-center justify-between border-b border-gray-200 px-6 py-4;
+}
+
+.modalTitle {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.closeButton {
+  @apply text-3xl text-gray-400 transition-colors hover:text-gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 0.7;
+  padding: 0;
+}
+
+.tabsContainer {
+  @apply flex border-b border-gray-200 px-6;
+}
+
+.tab {
+  @apply relative px-4 py-3 text-sm font-medium text-gray-600 transition-colors hover:text-gray-900;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.activeTab {
+  @apply text-blue-600;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #3b82f6;
+}
+
+.badge {
+  @apply ml-2 inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-red-500 px-1 text-xs text-white;
+}
+
+.notificationsList {
+  @apply flex-1 overflow-y-auto px-2 py-2;
+}
+
+.notificationItem {
+  @apply flex cursor-pointer gap-3 rounded-lg p-4 transition-colors hover:bg-gray-50;
+}
+
+.notificationItem.unread {
+  @apply bg-blue-50;
+}
+
+.notificationIcon {
+  @apply flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-xl;
+}
+
+.unread .notificationIcon {
+  @apply bg-blue-100;
+}
+
+.notificationContent {
+  @apply flex-1;
+}
+
+.notificationTitle {
+  @apply text-sm font-semibold text-gray-900;
+}
+
+.notificationMessage {
+  @apply mt-1 text-sm text-gray-600;
+}
+
+.notificationTime {
+  @apply mt-1 block text-xs text-gray-400;
+}
+
+.emptyState {
+  @apply flex h-48 items-center justify-center text-gray-500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .modalContent {
+    @apply m-4 max-h-[90vh] max-w-full;
+  }
+}

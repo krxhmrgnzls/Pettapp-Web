@@ -21,6 +21,8 @@ import BusinessProfile from './pages/Business/BusinessProfile';
 import BusinessMessages from './pages/Business/BusinessMessages';
 import BusinessServices from './pages/Business/BusinessServices';
 import BusinessSchedules from './pages/Business/BusinessSchedules';
+import IncomeManagement from './pages/Business/IncomeManagement';
+import FinancialSummary from './pages/Business/FinancialSummary';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -56,7 +58,6 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/about" element={<AboutPage />} />
         <Route path="/account-created" element={<AccountCreatedPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         
@@ -84,6 +85,18 @@ function App() {
             </ProtectedRoute>
           } 
         />
+        
+        <Route 
+        path="/business/income-management" 
+        element={
+        <IncomeManagement />
+        } />
+        
+        <Route 
+        path="/business/financial-summary" 
+        element={
+        <FinancialSummary />
+        } />
         
         {/* Business Messages */}
         <Route 
