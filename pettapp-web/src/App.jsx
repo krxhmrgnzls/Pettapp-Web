@@ -23,6 +23,7 @@ import BusinessServices from './pages/Business/BusinessServices';
 import BusinessSchedules from './pages/Business/BusinessSchedules';
 import IncomeManagement from './pages/Business/IncomeManagement';
 import FinancialSummary from './pages/Business/FinancialSummary';
+ import AddNewService from './pages/Business/AddNewService';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -118,6 +119,12 @@ function App() {
           } 
         />
         
+        <Route 
+          path="/business/services/new" 
+          element={<AddNewService />
+          } 
+        />
+
         {/* Business Schedules */}
         <Route 
           path="/business/schedules" 

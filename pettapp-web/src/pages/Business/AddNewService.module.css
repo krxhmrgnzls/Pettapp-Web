@@ -1,0 +1,124 @@
+.container {
+  @apply mx-auto max-w-7xl p-8;
+}
+
+.pageTitle {
+  @apply mb-6 text-2xl font-semibold text-gray-800;
+}
+
+.formCard {
+  @apply rounded-xl bg-white p-8 shadow-sm;
+}
+
+.formGrid {
+  @apply grid grid-cols-1 gap-8 lg:grid-cols-2;
+}
+
+/* Photo Section */
+.photoSection {
+  @apply space-y-6;
+}
+
+.photoUploadBox {
+  @apply flex h-64 w-full items-center justify-center rounded-xl border-2 border-dashed border-gray-300 bg-gray-50;
+}
+
+.photoUploadLabel {
+  @apply flex cursor-pointer flex-col items-center justify-center py-8;
+}
+
+.uploadIcon {
+  @apply mb-2 text-4xl font-light text-blue-500;
+}
+
+.uploadText {
+  @apply text-sm font-medium text-blue-500;
+}
+
+.hiddenInput {
+  @apply hidden;
+}
+
+.photoPreview {
+  @apply relative h-full w-full;
+}
+
+.previewImage {
+  @apply h-full w-full rounded-xl object-cover;
+}
+
+.removePhotoBtn {
+  @apply absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-white text-xl font-bold text-gray-600 shadow-md hover:bg-gray-100;
+}
+
+/* Service Details Section */
+.serviceDetailsSection {
+  @apply space-y-3;
+}
+
+.sectionTitle {
+  @apply text-base font-medium text-gray-700;
+}
+
+.descriptionTextarea {
+  @apply w-full resize-none rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20;
+}
+
+/* Form Fields */
+.formFields {
+  @apply space-y-5;
+}
+
+.formGroup {
+  @apply space-y-2;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.input {
+  @apply w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20;
+}
+
+.select {
+  @apply w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.priceInputs {
+  @apply grid grid-cols-2 gap-3;
+}
+
+/* Form Actions */
+.formActions {
+  @apply mt-8 flex justify-end gap-3;
+}
+
+.cancelButton {
+  @apply rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-50;
+}
+
+.createButton {
+  @apply rounded-lg bg-blue-500 px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    @apply p-4;
+  }
+  
+  .formGrid {
+    @apply grid-cols-1;
+  }
+  
+  .photoUploadBox {
+    @apply h-48;
+  }
+}

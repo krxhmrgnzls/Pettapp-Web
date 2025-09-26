@@ -1,0 +1,197 @@
+.modalOverlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  @apply relative w-full max-w-3xl rounded-2xl bg-white shadow-2xl;
+  animation: slideUp 0.3s ease-out;
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  @apply relative border-b border-gray-200 px-6 py-5;
+}
+
+.modalTitle {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.modalSubtitle {
+  @apply mt-1 text-sm text-gray-500;
+}
+
+.closeButton {
+  @apply absolute right-6 top-5 text-3xl text-gray-400 transition-colors hover:text-gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 0.7;
+  padding: 0;
+}
+
+/* Modal Body */
+.modalBody {
+  @apply flex-1 overflow-y-auto px-6 py-5;
+}
+
+/* Bulk Actions */
+.bulkActions {
+  @apply mb-5 flex items-center gap-3;
+}
+
+.bulkLabel {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.bulkBtn {
+  @apply rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+.pauseBtn {
+  @apply bg-yellow-500 hover:bg-yellow-600;
+}
+
+.deactivateBtn {
+  @apply bg-red-500 hover:bg-red-600;
+}
+
+/* Services List */
+.servicesList {
+  @apply space-y-4;
+}
+
+.serviceItem {
+  @apply flex items-center gap-4 rounded-lg border border-gray-200 p-4 transition-colors hover:bg-gray-50;
+}
+
+.serviceIcon {
+  @apply h-16 w-16 flex-shrink-0 rounded-lg bg-gray-200;
+}
+
+.serviceInfo {
+  @apply flex-1 space-y-1;
+}
+
+.serviceName {
+  @apply font-medium text-gray-900;
+}
+
+.servicePrice {
+  @apply text-sm text-gray-600;
+}
+
+.serviceBookings {
+  @apply text-xs text-gray-500;
+}
+
+.serviceDevelopment {
+  @apply text-xs text-gray-400;
+}
+
+/* Service Controls */
+.serviceControls {
+  @apply flex items-center gap-3;
+}
+
+/* Toggle Switch */
+.toggleSwitch {
+  @apply relative inline-block h-6 w-11;
+}
+
+.toggleSwitch input {
+  @apply hidden;
+}
+
+.toggleSlider {
+  @apply absolute bottom-0 left-0 right-0 top-0 cursor-pointer rounded-full bg-gray-300 transition-all;
+}
+
+.toggleSlider:before {
+  @apply absolute bottom-1 left-1 h-4 w-4 rounded-full bg-white transition-all;
+  content: "";
+}
+
+.toggleSwitch input:checked + .toggleSlider {
+  @apply bg-green-500;
+}
+
+.toggleSwitch input:checked + .toggleSlider:before {
+  transform: translateX(20px);
+}
+
+.statusSelect {
+  @apply rounded-lg border border-gray-300 px-3 py-1.5 text-sm focus:border-blue-500 focus:outline-none;
+}
+
+.statusSelect:disabled {
+  @apply cursor-not-allowed bg-gray-100 opacity-50;
+}
+
+.statusBtn {
+  @apply rounded-lg px-4 py-1.5 text-sm font-medium;
+}
+
+.activeBtn {
+  @apply bg-green-100 text-green-700;
+}
+
+.pausedBtn {
+  @apply bg-yellow-100 text-yellow-700;
+}
+
+.draftBtn {
+  @apply bg-gray-100 text-gray-700;
+}
+
+/* Modal Footer */
+.modalFooter {
+  @apply flex justify-end gap-3 border-t border-gray-200 px-6 py-4;
+}
+
+.cancelButton {
+  @apply rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-50;
+}
+
+.saveButton {
+  @apply rounded-lg bg-blue-500 px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    @apply m-4 max-h-[90vh] max-w-full;
+  }
+  
+  .serviceItem {
+    @apply flex-col text-center;
+  }
+  
+  .serviceControls {
+    @apply w-full justify-center;
+  }
+}

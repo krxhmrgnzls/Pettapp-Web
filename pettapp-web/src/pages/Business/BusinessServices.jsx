@@ -1,48 +1,60 @@
 import React, { useState } from 'react';
 import BusinessLayout from '../../component/layout/BusinessLayout';
 import { useNavigate } from 'react-router-dom';
+import ManageStatusModal from '../../component/modals/ManageStatusModal';
 
 const BusinessServices = () => {
   const navigate = useNavigate();
+  
+  // State for services
   const [services, setServices] = useState([
     {
       id: 1,
       name: 'Pet Check-up',
       price: 'PHP 800 - PHP 1,200',
       rating: 5,
-      status: 'active'
+      status: 'active',
+      bookings: 27
     },
     {
       id: 2,
       name: 'Pet Lodging',
       price: 'PHP 500 - PHP 800/day',
       rating: 4,
-      status: 'active'
+      status: 'active',
+      bookings: 3
     }
   ]);
 
-  const handleManageStatus = () => {
-    // TODO: Implement status management
-    console.log('Manage status clicked');
-  };
+  // State for Manage Status Modal
+  const [isManageStatusOpen, setIsManageStatusOpen] = useState(false);
 
+  // Handler for creating new service
   const handleCreateService = () => {
-    // Navigate to create service page or open modal
     navigate('/business/services/new');
   };
 
+  // Handler for manage status button
+  const handleManageStatus = () => {
+    setIsManageStatusOpen(true);
+  };
+
+  // Handler for status updates from modal
+  const handleStatusUpdate = (updatedServices) => {
+    setServices(updatedServices);
+  };
+
   const handleEditService = (serviceId) => {
-    // TODO: Navigate to edit service page
     console.log('Edit service:', serviceId);
+    // TODO: Navigate to edit service page
   };
 
   const handleViewDetails = (serviceId) => {
-    // TODO: Navigate to service details page
     console.log('View details:', serviceId);
+    // TODO: Navigate to service details page
   };
 
   const handleDeleteService = (serviceId) => {
-    // TODO: Implement delete functionality
     if (window.confirm('Are you sure you want to delete this service?')) {
       console.log('Delete service:', serviceId);
       setServices(services.filter(s => s.id !== serviceId));
@@ -66,40 +78,32 @@ const BusinessServices = () => {
     <BusinessLayout>
       <div className="p-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header with buttons */}
-          <div className="flex justify-end items-center mb-6 space-x-3">
+          {/* Header with Manage Status button*/}
+          <div className="flex justify-end items-center mb-6">
             <button 
               onClick={handleManageStatus}
               className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors"
             >
               Manage Status
             </button>
-            <button 
-              onClick={handleCreateService}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors flex items-center"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-              </svg>
-              Create Service
-            </button>
           </div>
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Add New Service Card */}
-            <div 
+            <button
+              type="button"
               onClick={handleCreateService}
-              className="bg-white rounded-lg shadow-sm border-2 border-dashed border-gray-300 p-8 flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 transition-colors min-h-[250px]"
+              className="bg-white rounded-lg shadow-sm border-2 border-dashed border-gray-300 p-8 flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 hover:shadow-md transition-all min-h-[250px] w-full text-left focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <div className="text-blue-500 mb-4">
+              <div className="text-blue-500 mb-4 pointer-events-none">
                 <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
-              <p className="text-blue-500 font-medium">Add New Service</p>
-              <p className="text-gray-500 text-sm mt-2">Create service for your clients</p>
-            </div>
+              <p className="text-blue-500 font-medium pointer-events-none">Add New Service</p>
+              <p className="text-gray-500 text-sm mt-2 pointer-events-none">Create service for your clients</p>
+            </button>
 
             {/* Existing Services */}
             {services.map((service) => (
@@ -143,16 +147,9 @@ const BusinessServices = () => {
                 </div>
               </div>
             ))}
-
-            {/* Empty state placeholder cards - for demonstration */}
-            {services.length < 2 && (
-              <>
-                {}
-              </>
-            )}
           </div>
 
-          {/* Services Summary Section - Optional */}
+          {/* Services Summary Section */}
           <div className="mt-8 bg-white rounded-lg shadow-sm p-6">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Services Overview</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -172,6 +169,14 @@ const BusinessServices = () => {
           </div>
         </div>
       </div>
+
+      {/* Manage Status Modal*/}
+      <ManageStatusModal
+        isOpen={isManageStatusOpen}
+        onClose={() => setIsManageStatusOpen(false)}
+        services={services}
+        onUpdate={handleStatusUpdate}
+      />
     </BusinessLayout>
   );
 };
